@@ -18,6 +18,8 @@ fun SetupNavGraph(
      * Guide for animation transition see here :
      * - https://www.youtube.com/watch?v=MhXa-5Arw3Q
      * - https://tomas-repcik.medium.com/jetpack-compose-and-screen-transition-animations-b361fc8164cc
+     * Guid for navigation back stack
+     * - https://medium.com/@banmarkovic/jetpack-compose-clear-back-stack-popbackstack-inclusive-explained-14ee73a29df5
      */
     NavHost(
         modifier = modifier,
