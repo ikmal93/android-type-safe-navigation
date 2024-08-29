@@ -31,12 +31,12 @@ fun NavGraphBuilder.homeScreen(navController: NavHostController) {
     composable<Screen.Home>(
         enterTransition = {
             slideIntoContainer(
-                AnimatedContentTransitionScope.SlideDirection.Start, tween(500)
+                AnimatedContentTransitionScope.SlideDirection.Start, tween(300)
             )
         },
         popEnterTransition = {
             slideIntoContainer(
-                AnimatedContentTransitionScope.SlideDirection.Start, tween(500)
+                AnimatedContentTransitionScope.SlideDirection.Start, tween(300)
             )
         },
     ) {

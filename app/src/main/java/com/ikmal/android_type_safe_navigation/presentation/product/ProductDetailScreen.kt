@@ -37,12 +37,12 @@ fun NavGraphBuilder.productDetailScreen(navController: NavHostController) {
     composable<Screen.ProductDetail>(
         enterTransition = {
             slideIntoContainer(
-                AnimatedContentTransitionScope.SlideDirection.Start, tween(500)
+                AnimatedContentTransitionScope.SlideDirection.Start, tween(300)
             )
         },
         popExitTransition = {
             slideOutOfContainer(
-                AnimatedContentTransitionScope.SlideDirection.End, tween(500)
+                AnimatedContentTransitionScope.SlideDirection.End, tween(300)
             )
         },
     ) { backStackEntry ->
