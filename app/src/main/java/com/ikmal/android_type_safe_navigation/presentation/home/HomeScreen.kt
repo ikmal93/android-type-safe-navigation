@@ -1,5 +1,7 @@
 package com.ikmal.android_type_safe_navigation.presentation.home
 
+import androidx.compose.animation.AnimatedContentTransitionScope
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -19,6 +21,29 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.composable
+import com.ikmal.android_type_safe_navigation.navigation.Screen
+
+fun NavGraphBuilder.homeScreen(navController: NavHostController) {
+    composable<Screen.Home>(
+        enterTransition = {
+            slideIntoContainer(
+                AnimatedContentTransitionScope.SlideDirection.Start, tween(500)
+            )
+        },
+        popEnterTransition = {
+            slideIntoContainer(
+                AnimatedContentTransitionScope.SlideDirection.Start, tween(500)
+            )
+        },
+    ) {
+        HomeScreen {
+            navController.navigate(Screen.ProductList(id = 1))
+        }
+    }
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -58,7 +83,7 @@ fun HomeScreen(onClick: () -> Unit) {
                     ),
                     onClick = onClick
                 ) {
-                    Text(text = "Hit Me", fontSize = 18.sp)
+                    Text(text = "Start", fontSize = 18.sp)
                 }
             }
         },
